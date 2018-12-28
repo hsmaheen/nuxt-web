@@ -3,6 +3,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: ${PROJECT_NAME}
+  annotations:
+   ingress.kubernetes.io/target-proxy: https-target
 spec:
   selector:
     app: ${PROJECT_NAME}

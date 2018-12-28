@@ -1,0 +1,9 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nuxt-web-app-ingress
+spec:
+  backend:
+    serviceName: nuxt-web-app # Name of the Service targeted by the Ingress
+    servicePort: 80 # Should match the port used by the Service
