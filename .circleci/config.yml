@@ -55,16 +55,6 @@ jobs:
             docker build \
               --build-arg COMMIT_REF=${CIRCLE_SHA1} \
               --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` \
-              --build-arg GOOGLE_API_KEY=${GOOGLE_API_KEY} \
-              --build-arg SPREASHEET_ID=${SPREASHEET_ID} \
-              --build-arg TEAM_PICTURES_FOLDER_ID=${TEAM_PICTURES_FOLDER_ID} \
-              --build-arg ORGANISATIONS_PICTURES_FOLDER_ID=${ORGANISATIONS_PICTURES_FOLDER_ID} \
-              --build-arg PRODUCT_PICTURES_FOLDER_ID=${PRODUCT_PICTURES_FOLDER_ID} \
-              --build-arg TESTIMONIALS_PICTURES_FOLDER_ID=${TESTIMONIALS_PICTURES_FOLDER_ID} \
-              --build-arg ANALYTICS_KEY=${ANALYTICS_KEY} \
-              --build-arg MAPBOX_KEY=${MAPBOX_KEY} \
-              --build-arg GOOGLE_RECAPTCHA_SITE_KEY=${GOOGLE_RECAPTCHA_SITE_KEY} \
-              --build-arg EMAIL_API_KEY=${EMAIL_API_KEY} \
               -t ${PROJECT_NAME} .
             docker tag ${PROJECT_NAME} asia.gcr.io/${GOOGLE_PROJECT_ID}/${PROJECT_NAME}:${CIRCLE_SHA1}
             gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://asia.gcr.io
