@@ -32,7 +32,7 @@ jobs:
     environment:
       - PROJECT_NAME: 'nuxt-web-app'
       - GOOGLE_PROJECT_ID: 'nuxt-web-app'
-      - GOOGLE_COMPUTE_ZONE: 'asia-southeast1'
+      - GOOGLE_COMPUTE_ZONE: 'asia-southeast1-a'
       - GOOGLE_CLUSTER_NAME: 'nuxt-web-app-cluster'
     steps:
       - checkout
