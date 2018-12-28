@@ -76,4 +76,4 @@ workflows:
             - front_build_and_test
           filters:
             branches:
-              only: staging
+              only: master
