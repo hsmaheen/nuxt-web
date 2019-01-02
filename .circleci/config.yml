@@ -54,7 +54,7 @@ jobs:
             gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://asia.gcr.io
             envsubst < deploy.sh > patched_deploy.sh
             bash patched_deploy.sh
-            kubectl rollout status deployment/${CLIENT_APP}
+            kubectl rollout status deployment/client-deployment
           
 workflows:
   version: 2
