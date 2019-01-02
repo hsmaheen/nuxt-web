@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webapp:
+    build:
+      context: ./front
+  api:
+    build:
+      context: ./back
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '80:80'

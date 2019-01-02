@@ -1,0 +1,11 @@
+FROM gcr.io/google_appengine/nodejs
+
+
+ADD . /app
+WORKDIR /app
+
+
+
+RUN npm install
+ENV PORT 8080
+CMD ["npm", "start"]

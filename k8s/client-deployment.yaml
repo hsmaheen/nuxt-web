@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: client
+  template:
+    metadata:
+      labels:
+        component: client
+    spec:
+      containers:
+        - name: client
+          image: asia.gcr.io/${GOOGLE_PROJECT_ID}/${CLIENT_APP}:${CIRCLE_SHA1}
+          ports:
+            - containerPort: 3000

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: client-cluster-ip-svc
+spec:
+  selector:
+    component: client
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: 3000
