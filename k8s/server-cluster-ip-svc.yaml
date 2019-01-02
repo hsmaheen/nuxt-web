@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: server-cluster-ip-svc
+spec:
+  selector:
+    component: server
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
