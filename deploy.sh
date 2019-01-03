@@ -1,12 +1,13 @@
 # for client app
-docker build  -t ${CLIENT_APP} ./front
-docker build  -t ${SERVER_APP} ./back
-
-docker tag ${CLIENT_APP} asia.gcr.io/${GOOGLE_PROJECT_ID}/${CLIENT_APP}:${CIRCLE_SHA1}
-docker tag ${SERVER_APP} asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:${CIRCLE_SHA1}
+docker build  -t asia.gcr.io/${GOOGLE_PROJECT_ID}/${CLIENT_APP}:${CIRCLE_SHA1} -t asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:latest ./front
+docker build  -t asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:${CIRCLE_SHA1} -t asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:latest ./back
 
 docker push asia.gcr.io/${GOOGLE_PROJECT_ID}/${CLIENT_APP}:${CIRCLE_SHA1}
 docker push asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:${CIRCLE_SHA1}
+
+docker push asia.gcr.io/${GOOGLE_PROJECT_ID}/${CLIENT_APP}:latest
+docker push asia.gcr.io/${GOOGLE_PROJECT_ID}/${SERVER_APP}:latest
+
 
 kubectl apply -f k8s
 
