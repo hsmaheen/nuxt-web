@@ -33,7 +33,7 @@ jobs:
       - CLIENT_APP: "client-app"
       - SERVER_APP: "server-app"
       - GOOGLE_PROJECT_ID: "nuxt-web-app"
-      - GOOGLE_COMPUTE_ZONE: "asia-southeast1-a"
+      - GOOGLE_COMPUTE_ZONE: "asia-southeast1"
       - GOOGLE_CLUSTER_NAME: "nuxt-web-app-cluster"
     steps:
       - checkout
