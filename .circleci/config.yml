@@ -30,11 +30,11 @@ jobs:
     docker:
       - image: google/cloud-sdk
     environment:
-      - CLIENT_APP: 'client-app'
-      - SERVER_APP: 'server-app'
-      - GOOGLE_PROJECT_ID: 'nuxt-web-app'
-      - GOOGLE_COMPUTE_ZONE: 'asia-southeast1-a'
-      - GOOGLE_CLUSTER_NAME: 'nuxt-web-app-cluster'
+      - CLIENT_APP: "client-app"
+      - SERVER_APP: "server-app"
+      - GOOGLE_PROJECT_ID: "nuxt-web-app"
+      - GOOGLE_COMPUTE_ZONE: "asia-southeast1"
+      - GOOGLE_CLUSTER_NAME: "nuxt-web-app-cluster"
     steps:
       - checkout
       - run:
@@ -57,7 +57,7 @@ jobs:
             bash patched_deploy.sh
             kubectl rollout status deployment/client-deployment
             kubectl rollout status deployment/server-deployment
-          
+
 workflows:
   version: 2
   build_and_deploy:
