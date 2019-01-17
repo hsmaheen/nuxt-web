@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: hsmaheen-tls
+spec:
+  secretName: hsmaheen.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: hsmaheen.com
+  dnsNames:
+    - hsmaheen.com
+    - www.hsmaheen.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - hsmaheen.com
+          - www.hsmaheen.com
