@@ -15,36 +15,35 @@ spec:
         - www.hsmaheen.com
       secretName: hsmaheen.com
   rules:
-    rules:
-      - http:
-          paths:
-            - path: /
-              backend:
-                serviceName: client-cluster-ip-svc
-                servicePort: 3000
-            - path: /api/
-              backend:
-                serviceName: server-cluster-ip-svc
-                servicePort: 8080
-      - host: hsmaheen.com
-        http:
-          paths:
-            - path: /
-              backend:
-                serviceName: client-cluster-ip-svc
-                servicePort: 3000
-            - path: /api/
-              backend:
-                serviceName: server-cluster-ip-svc
-                servicePort: 8080
-      - host: www.hsmaheen.com
-        http:
-          paths:
-            - path: /
-              backend:
-                serviceName: client-cluster-ip-svc
-                servicePort: 3000
-            - path: /api/
-              backend:
-                serviceName: server-cluster-ip-svc
-                servicePort: 8080
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: client-cluster-ip-svc
+              servicePort: 3000
+          - path: /api/
+            backend:
+              serviceName: server-cluster-ip-svc
+              servicePort: 8080
+    - host: hsmaheen.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: client-cluster-ip-svc
+              servicePort: 3000
+          - path: /api/
+            backend:
+              serviceName: server-cluster-ip-svc
+              servicePort: 8080
+    - host: www.hsmaheen.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: client-cluster-ip-svc
+              servicePort: 3000
+          - path: /api/
+            backend:
+              serviceName: server-cluster-ip-svc
+              servicePort: 8080
